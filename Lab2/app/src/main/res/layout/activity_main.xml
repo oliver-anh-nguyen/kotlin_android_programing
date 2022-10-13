@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dd_logo"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/tvFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hamburger"
+        android:textAlignment="center"
+        android:textSize="30sp"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <EditText
+        android:id="@+id/etFood"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:hint="add new food..."/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="addFood"
+        android:text="ADD FOOD"
+        android:textSize="20dp"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+    <Button
+        android:id="@+id/btnDecide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DECIDE!"
+        android:onClick="decideMenu"
+        android:textSize="20dp"/>
+</LinearLayout>
