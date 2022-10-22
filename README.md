@@ -10,7 +10,7 @@ Mobile Device Programing Distance Education
 
 Screenshot1             |  Screenshot2   |  Screenshot3
 :-------------------------:|:-------------------------:|:-------------------------:
-<img src="Lab3/TableLayout/sc1.png" width="300" height="600"/> | <img src="Lab3/TableLayout/sc2.png" width="300" height="600"/> | <img src="Lab3/TableLayout/sc3.png" width="300" height="600"/>
+<img src="Lab3/TableLayout/sc1.png" width="300" height="500"/> | <img src="Lab3/TableLayout/sc2.png" width="300" height="500"/> | <img src="Lab3/TableLayout/sc3.png" width="300" height="500"/>
 
 <h3> Problem 2 </h3>
 
