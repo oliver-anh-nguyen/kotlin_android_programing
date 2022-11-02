@@ -1,5 +1,6 @@
 package edu.miu.walmart.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -30,6 +31,6 @@ class CategoryActivity : AppCompatActivity() {
     }
 
     fun showElectric(view: View) {
-        Toast.makeText(this, "Electric", Toast.LENGTH_LONG).show()
+        startActivity(Intent(this, ListElectronicsActivity::class.java))
     }
 }
