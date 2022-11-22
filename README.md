@@ -23,3 +23,16 @@ Screenshot1             |  Screenshot2
 Screenshot1             |  Screenshot2   |  Screenshot3
 :-------------------------:|:-------------------------:|:-------------------------:
 <img src="Lab4/sc1.png" width="300" height="500"/> | <img src="Lab4/sc2.png" width="300" height="500"/> | <img src="Lab4/sc3.png" width="300" height="500"/>
+
+<h2>Lab 5</h2>
+<h3> Problem 1 </h3>
+
+Screenshot1             |  Screenshot2   | 
+:-------------------------:|:-------------------------:
+<img src="Lab5/QuizApp/sc1.png" width="300" height="600"/> | <img src="Lab5/QuizApp/sc2.png" width="300" height="600"/> 
+
+<h3> Problem 2 </h3>
+
+Screenshot1             |  Screenshot2   
+:-------------------------:|:-------------------------:
+<img src="Lab5/Walmart/sc4.png" width="300" height="600"/> | <img src="Lab5/Walmart/sc5.png" width="300" height="600"/> 
