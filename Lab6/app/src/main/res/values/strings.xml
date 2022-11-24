@@ -2,4 +2,7 @@
     <string name="app_name">CV</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="career_note"><b>Completed</b> on-campus studies and currently taking distance education courses to complete a Master\'s Degree in Computer Science (Available for full-time, <b>W-2</b> employee)</string>
+    <string name="work_experience"><b>Languages:</b> Swift, Objective-C, Kotlin, Java \n<b>Web: </b> HTML5, CSS3, Javascript\n<b>Web services: </b>HTML5, CSS3, Javascript\n<b>Frameworks: </b> Flutter, Node.js\n<b>Platforms: </b>iOS, Android, Web</string>
+    <string name="about_me">Efficient iOS Developer with 9 years of professional experience driving project delivery by implementing optimal technologies, analyzing requirements and specifications, designing architecture, and establishing functional specifications in Agile / Scrum environment. Motivated team leader who mentors junior developers and performs code reviews to strengthen development process and increase customer satisfaction. Skilled in using technologies such as Objective-C, Swift, Git, MVC, MVVM, and Node.js.</string>
 </resources>
