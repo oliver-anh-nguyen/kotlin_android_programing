@@ -9,7 +9,8 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), WorkDialogDelegate {
+    val workFragment = WorkFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -50,5 +51,9 @@ class HomeActivity : AppCompatActivity() {
             Toast.LENGTH_LONG
         ).show()
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun addWork(work: WorkEntity) {
+        workFragment.addWOrk(work)
     }
 }
