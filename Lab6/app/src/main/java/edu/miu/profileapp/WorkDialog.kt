@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
@@ -25,12 +26,13 @@ class WorkDialog : DialogFragment() {
                 }
 
                 view.findViewById<Button>(R.id.btnAdd)?.setOnClickListener {
-                    val title = tvTitle.text.toString().trim()
-                    val name = tvName.text.toString().trim()
-                    val time = tvTime.text.toString().trim()
-                    val location = tvLocation.text.toString().trim()
-                    validate(title, name, time, location)
-                    delegate.addWork(WorkEntity(name, title, time, location))
+                    val title = view.findViewById<EditText>(R.id.tvTitle).text.toString().trim()
+                    val name = view.findViewById<EditText>(R.id.tvName).text.toString().trim()
+                    val time = view.findViewById<EditText>(R.id.tvTime).text.toString().trim()
+                    val location = view.findViewById<EditText>(R.id.tvLocation).text.toString().trim()
+                    if (validate(title, name, time, location)) {
+                        delegate.addWork(WorkEntity(name, title, time, location))
+                    }
                     dismiss()
                 }
 
@@ -42,23 +44,24 @@ class WorkDialog : DialogFragment() {
         return dialog
     }
 
-    fun validate(title: String, name: String, time: String, location: String){
+    fun validate(title: String, name: String, time: String, location: String): Boolean{
         if(title.isEmpty()){
             Toast.makeText(context, "Please enter title!", Toast.LENGTH_LONG).show()
-            return
+            return false
         }
         if(name.isEmpty()){
             Toast.makeText(context, "Please enter name!", Toast.LENGTH_LONG).show()
-            return
+            return false
         }
         if(time.isEmpty()){
             Toast.makeText(context, "Please enter duration!", Toast.LENGTH_LONG).show()
-            return
+            return false
         }
         if(location.isEmpty()){
             Toast.makeText(context, "Please enter location!", Toast.LENGTH_LONG).show()
-            return
+            return false
         }
+        return true
     }
 
     override fun onAttach(context: Context) {

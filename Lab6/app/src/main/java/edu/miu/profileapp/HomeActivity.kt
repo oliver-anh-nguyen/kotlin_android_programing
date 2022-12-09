@@ -10,11 +10,13 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity(), WorkDialogDelegate {
-    val workFragment = WorkFragment()
+
+    private lateinit var adapter: MyAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val adapter = MyAdapter(supportFragmentManager, lifecycle)
+        adapter = MyAdapter(supportFragmentManager, lifecycle)
         viewPager.adapter = adapter
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
@@ -54,6 +56,6 @@ class HomeActivity : AppCompatActivity(), WorkDialogDelegate {
     }
 
     override fun addWork(work: WorkEntity) {
-        workFragment.addWOrk(work)
+        adapter.addWork(work)
     }
 }

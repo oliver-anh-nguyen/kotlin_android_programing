@@ -10,11 +10,12 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
 
     private var works = ArrayList<WorkEntity>()
 
+    private lateinit var adapter: WorkAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         if (context != null) {
-            var works = ArrayList<WorkEntity>()
             works.add(WorkEntity(
                 title = "Senior iOS Developer",
                 name = "ZaloPay",
@@ -28,7 +29,7 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
                 location = "HCM, VietNam"
             ))
             recycleWorks.layoutManager = LinearLayoutManager(context)
-            val adapter = WorkAdapter(requireContext(), works)
+            adapter = WorkAdapter(requireContext(), works)
             recycleWorks.adapter = adapter
         }
         btnFloatAdd.setOnClickListener {
@@ -43,5 +44,6 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
 
     fun addWOrk(work: WorkEntity) {
         works.add(work)
+        adapter.notifyDataSetChanged()
     }
 }
