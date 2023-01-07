@@ -1,4 +1,4 @@
-package edu.miu.quizapp
+package edu.miu.quizapp.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

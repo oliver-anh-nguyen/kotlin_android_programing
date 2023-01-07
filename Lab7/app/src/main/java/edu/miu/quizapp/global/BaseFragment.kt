@@ -1,4 +1,4 @@
-package edu.miu.quizapp
+package edu.miu.quizapp.global
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package edu.miu.quizapp
+package edu.miu.quizapp.model
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

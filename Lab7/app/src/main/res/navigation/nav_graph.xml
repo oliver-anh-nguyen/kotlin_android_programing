@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="edu.miu.quizapp.HomeFragment"
+        android:name="edu.miu.quizapp.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,17 +16,17 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="edu.miu.quizapp.QuizFragment"
+        android:name="edu.miu.quizapp.fragments.QuizFragment"
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" />
     <fragment
         android:id="@+id/resultFragment"
-        android:name="edu.miu.quizapp.ResultFragment"
+        android:name="edu.miu.quizapp.fragments.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
     <fragment
         android:id="@+id/analysisFragment"
-        android:name="edu.miu.quizapp.AnalysisFragment"
+        android:name="edu.miu.quizapp.fragments.AnalysisFragment"
         android:label="fragment_analysis"
         tools:layout="@layout/fragment_analysis" />
 </navigation>

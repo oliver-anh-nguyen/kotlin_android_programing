@@ -1,15 +1,28 @@
-package edu.miu.quizapp
+package edu.miu.quizapp.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.fragment_quiz.*
+import androidx.lifecycle.lifecycleScope
+import edu.miu.quizapp.model.QuizViewModel
+import edu.miu.quizapp.R
+import edu.miu.quizapp.database.Quiz
+import edu.miu.quizapp.database.QuizDatabase
+import edu.miu.quizapp.global.BaseFragment
+import edu.miu.quizapp.toast
+import kotlinx.android.synthetic.main.fragment_quiz.view.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class QuizFragment : BaseFragment() {
+
+    private lateinit var radioGroup: RadioGroup
+    private lateinit var tvQuestion: TextView
 
     private lateinit var questions: List<Quiz>
     private lateinit var curQuiz: Quiz
@@ -20,6 +33,7 @@ class QuizFragment : BaseFragment() {
     private var firstQuestion = true
     private var questionIndex = 0
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,8 +41,12 @@ class QuizFragment : BaseFragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_quiz, container, false)
         loadQuestions()
-        quizModel = ViewModelProvider(this).get(QuizViewModel::class.java)
-        btnNext.setOnClickListener {
+
+        radioGroup = view.radioGroup
+        tvQuestion = view.tvQuestion
+
+        quizModel = ViewModelProvider(this)[QuizViewModel::class.java]
+        view.btnNext.setOnClickListener {
             if (curAnswer != null) {
                 nextQuestion()
             } else {
@@ -37,15 +55,17 @@ class QuizFragment : BaseFragment() {
         }
 
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            val clicked = group.findViewById(checkedId) as RadioButton
-            curAnswer = clicked.text.toString()
+            if (checkedId >= 0) {
+                val clicked = group.findViewById(checkedId) as android.widget.RadioButton
+                curAnswer = clicked.text.toString()
+            }
         }
         return view
     }
 
     fun loadQuestions() {
-        launch {
-            context?.let {
+        lifecycleScope.launch(Dispatchers.IO) {
+            this@QuizFragment.context?.let {
                 questions = QuizDatabase(it).getQuizDao().getAllQuizzes()
                 nextQuestion()
             }

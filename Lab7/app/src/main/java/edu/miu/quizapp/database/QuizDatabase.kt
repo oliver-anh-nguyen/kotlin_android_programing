@@ -1,4 +1,4 @@
-package edu.miu.quizapp
+package edu.miu.quizapp.database
 
 import android.content.Context
 import androidx.room.Database
