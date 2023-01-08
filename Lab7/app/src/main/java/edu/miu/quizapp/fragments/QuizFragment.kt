@@ -9,6 +9,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import edu.miu.quizapp.model.QuizViewModel
 import edu.miu.quizapp.R
 import edu.miu.quizapp.database.Quiz
@@ -46,8 +47,10 @@ class QuizFragment : BaseFragment() {
         tvQuestion = view.tvQuestion
 
         quizModel = ViewModelProvider(this)[QuizViewModel::class.java]
+        quizModel!!.initScore()
         view.btnNext.setOnClickListener {
             if (curAnswer != null) {
+                checkAnswer(curAnswer!!)
                 nextQuestion()
             } else {
                 context?.toast("Please choice your answer!!!")
@@ -80,6 +83,10 @@ class QuizFragment : BaseFragment() {
         firstQuestion = false
 
         if (questionIndex == 2) {
+            val action = QuizFragmentDirections.actionQuizFragmentToResultFragment(
+                correct = quizModel?.totalScore()?.value!!, answers = answers.toTypedArray()
+            )
+            Navigation.findNavController(requireView()).navigate(action)
             return
         }
         curQuiz = questions[questionIndex]
