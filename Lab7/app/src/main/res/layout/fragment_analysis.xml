@@ -6,6 +6,7 @@
     tools:context=".fragments.AnalysisFragment">
 
     <ListView
+        android:layout_marginTop="20dp"
         android:id="@+id/listAnalysis"
         android:divider="@null"
         android:dividerHeight="12dp"

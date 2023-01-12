@@ -6,17 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import edu.miu.quizapp.R
+import edu.miu.quizapp.databinding.FragmentResultBinding
 import edu.miu.quizapp.global.BaseFragment
 import kotlinx.android.synthetic.main.fragment_result.view.*
 
-class ResultFragment : BaseFragment() {
+class ResultFragment : BaseFragment<FragmentResultBinding>(FragmentResultBinding::inflate) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_result, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val score = ResultFragmentArgs.fromBundle(requireArguments()).correct
         val wrongAnswer = 15 - score
         val total = "$score / 15"
@@ -24,16 +21,16 @@ class ResultFragment : BaseFragment() {
             "Total Questions: 15\n\nCorrect Answers(Score): %d\n\nWrong Answer: %d\n\nYour Score is: %s",
             score, wrongAnswer, total
         )
-        view.tvResult.text = textResult
+        binding.tvResult.text = textResult
         val answers = ResultFragmentArgs.fromBundle(requireArguments()).answers
-        view.btnAgain.setOnClickListener {
-            Navigation.findNavController(requireView()).navigate(R.id.action_resultFragment_to_quizFragment)
+        binding.btnAgain.setOnClickListener {
+            Navigation.findNavController(requireView())
+                .navigate(R.id.action_resultFragment_to_quizFragment)
         }
-        view.btnAnalysis.setOnClickListener {
+        binding.btnAnalysis.setOnClickListener {
             val action = ResultFragmentDirections.actionResultFragmentToAnalysisFragment(answers)
             Navigation.findNavController(requireView()).navigate(action)
         }
-        return view
     }
 
 }
