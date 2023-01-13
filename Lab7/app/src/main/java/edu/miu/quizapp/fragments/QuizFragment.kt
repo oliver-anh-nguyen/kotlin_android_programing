@@ -73,7 +73,7 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(FragmentQuizBinding::infl
         }
         firstQuestion = false
 
-        if (questionIndex == 2) {
+        if (questionIndex == 15) {
             val action = QuizFragmentDirections.actionQuizFragmentToResultFragment(
                 correct = quizModel?.totalScore()?.value!!, answers = answers.toTypedArray()
             )
@@ -90,8 +90,8 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(FragmentQuizBinding::infl
             }
 
             questionIndex += 1
-            curAnswer = null
             binding.radioGroup.clearCheck()
+            curAnswer = null
         }
 
         lifecycleScope.launch {
