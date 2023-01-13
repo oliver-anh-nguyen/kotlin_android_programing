@@ -3,6 +3,16 @@ Mobile Device Programing Distance Education
 
 # Screenshots
 
+<h2>Lab 7</h2>
+
+Screenshot1             |  Screenshot2   |  Screenshot3
+:-------------------------:|:-------------------------:|:-------------------------:
+<img src="Lab7/sc1.png" width="300" height="500"/> | <img src="Lab7/sc2.png" width="300" height="500"/> | <img src="Lab7/sc3.png" width="300" height="500"/>
+
+Screenshot4             |  Screenshot5   |  Screenshot6
+:-------------------------:|:-------------------------:|:-------------------------:
+<img src="Lab7/sc4.png" width="300" height="500"/> | <img src="Lab7/sc5.png" width="300" height="500"/> | <img src="Lab7/sc6.png" width="300" height="500"/>
+
 <h2>Lab 6</h2>
 
 Screenshot1             |  Screenshot2   |  Screenshot3
